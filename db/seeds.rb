@@ -28,5 +28,5 @@ array.each do |item|
         user_id: user.id
     )
 
-    puts "====== > ", vacancy.title, , vacancy.user_id
+    puts "====== > ", vacancy.title, vacancy.user_id
 end
