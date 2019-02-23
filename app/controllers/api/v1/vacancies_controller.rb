@@ -1,0 +1,63 @@
+class Api::V1::VacanciesController < ApplicationController
+    before_action :set_vacancy, only: [:show, :update, :destroy]
+    before_action :require_authorization!, only: [:show, :update, :destroy]
+    
+    # GET /api/v1/vacancies
+    def index
+        @vacancies = Vacancy.all # current_user.vacancies #
+        render json: @vacancies
+    end
+    
+    # GET /api/v1/vacancies/1
+    def show
+        render json: @vacancy
+    end
+    
+    # POST /api/v1/vacancies
+    
+    def create
+        @vacancy = Vacancy.new(vacancy_params)
+        #@vacancy.user_id = params[:user_id]
+
+        if @vacancy.save
+            render json: @vacancy, status: :created
+        else
+            render json: @vacancy.errors, status: :unprocessable_entity
+        end
+    end
+    
+    # PATCH/PUT /api/v1/vacancies/1
+    def update
+        if @vacancy.update(vacancy_params)
+            render json: @vacancy
+        else
+            render json: @vacancy.errors, status: :unprocessable_entity
+        end
+    end
+    
+    # DELETE /api/v1/vacancies/1
+    def destroy
+        @vacancy.destroy
+    end
+ 
+ private
+ 
+   # Use callbacks to share common setup or constraints between actions.
+   def set_vacancy
+     @vacancy = Vacancy.find(params[:id])
+   end
+ 
+   # Only allow a trusted parameter "white list" through.
+   def vacancy_params
+     params.require(:vacancy).permit(:title, :description, :typeCompany, :localization, :level, :typeJob, 
+                                     :responsabily, :requeriment, :otherBenefits, :user_id)
+   end
+ 
+   def require_authorization!
+     unless current_user == @vacancy.user
+       render json: {}, status: :forbidden
+     end
+   end
+
+end
+
