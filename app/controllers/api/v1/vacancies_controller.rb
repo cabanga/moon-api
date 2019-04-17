@@ -1,6 +1,6 @@
 class Api::V1::VacanciesController < ApplicationController
     before_action :set_vacancy, only: [:show, :update, :destroy]
-    before_action :require_authorization!, only: [:create, :update, :destroy]
+    # before_action :require_authorization!, only: [:create, :update, :destroy]
     
     # GET /api/v1/vacancies
     def index
