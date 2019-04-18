@@ -46,9 +46,7 @@ ActiveRecord::Schema.define(version: 2019_02_23_120024) do
     t.string "bonus"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_vacancies_on_user_id"
+    t.string "user_id", null: false
   end
 
-  add_foreign_key "vacancies", "users"
 end

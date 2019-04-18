@@ -5,15 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 
-user = User.create(name: 'okobit', email: 'okobit@email.com', acountType: 0, password: 'q1w2e3r4t5', password_confirmation: 'q1w2e3r4t5' )
-
 
 vacancy = Vacancy.create(
     title: "Programdor web Ruby On Rails",
     category: "FullStak",
     level: "Pleno",
     skills: ["Boostrap", "Jquery", "Ruby Puro", "Rails", "HTML / CSS"],
-    companyName: "Kianda Stream, Lda",
+    companyName: "Okobit, Lda",
     location: "Maianga, Rua 2",
     city: "Luanda",
     salary: "300,000.00",
@@ -21,7 +19,7 @@ vacancy = Vacancy.create(
     responsibilities: "Estamos buscando um Desenvolvedor Web com Ruby on Rails na frente de WordPress para se juntar à nossa crescente equipe digital.",
     requirements: "Experiência com Rails, Javascript, JQuery, HTML / CSS ",
     bonus: ["Transporte", "Alimentação", "Plafom de compras mensal"],
-    user_id: user.id
+    user_id: "iHyyCBOUEPdRhsBcRPKgJdE3Z603"
 )
 
 puts "====== > ", vacancy.title, vacancy.user_id

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       #resources :users
       resources :vacancies
+      get '/vacancies_uid/:uid', to: 'vacancies#vacancies_uid', as: 'vacancies_uid'
     end
   end
 
