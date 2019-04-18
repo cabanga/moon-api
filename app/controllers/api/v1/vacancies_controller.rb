@@ -23,8 +23,9 @@ class Api::V1::VacanciesController < ApplicationController
         @myvacancies_lasts = Vacancy.last(3)
         render json: @myvacancies_lasts
     end
+
+
     # POST /api/v1/vacancies
-    
     def create
         @vacancy = Vacancy.new(vacancy_params)
 
@@ -63,8 +64,7 @@ class Api::V1::VacanciesController < ApplicationController
    # Only allow a trusted parameter "white list" through.
    def vacancy_params
      params.require(:vacancy).permit(:title, :category, :level, :skills, :companyName, 
-                                     :location, :city, :salary, :description, :responsibilities, 
-                                     :requirements, :bonus, :user_id)
+                                     :location, :city, :salary, :descriptions , :bonus, :user_id)
    end
  
    def require_authorization!

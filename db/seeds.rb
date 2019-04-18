@@ -13,10 +13,8 @@ vacancy = Vacancy.create(
     companyName: "Okobit, Lda",
     location: "Maianga, Rua 2",
     city: "Luanda",
-    salary: "300,000.00",
+    salary: "3000000",
     description: "A Moon oferece um cadastro de maneira intuitiva e simples, bem como testes com os quais você pode demonstrar suas habilidades. Em pouco tempo consegui agendar entrevistas e estar inserido no mercado.",
-    responsibilities: "Estamos buscando um Desenvolvedor Web com Ruby on Rails na frente de WordPress para se juntar à nossa crescente equipe digital.",
-    requirements: "Experiência com Rails, Javascript, JQuery, HTML / CSS ",
     bonus: "Transporte, Alimentação, Plafom de compras mensal",
     user_id: "iHyyCBOUEPdRhsBcRPKgJdE3Z603"
 )
