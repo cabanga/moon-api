@@ -18,6 +18,11 @@ class Api::V1::VacanciesController < ApplicationController
         @myvacancies = Vacancy.where(user_id: @uid)
         render json: @myvacancies
     end
+
+    def vacancies_lasts
+        @myvacancies_lasts = Vacancy.last(3)
+        render json: @myvacancies_lasts
+    end
     # POST /api/v1/vacancies
     
     def create
