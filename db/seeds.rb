@@ -9,7 +9,7 @@ vacancy = Vacancy.create(
     title: "Programdor web Ruby On Rails",
     category: "FullStak",
     level: "Pleno",
-    skills: ["Boostrap", "Jquery", "Ruby Puro", "Rails", "HTML / CSS"],
+    skills: "Boostrap, Jquery, Ruby Puro, Rails, HTMLss/CSS",
     companyName: "Okobit, Lda",
     location: "Maianga, Rua 2",
     city: "Luanda",
@@ -17,7 +17,7 @@ vacancy = Vacancy.create(
     description: "A Moon oferece um cadastro de maneira intuitiva e simples, bem como testes com os quais você pode demonstrar suas habilidades. Em pouco tempo consegui agendar entrevistas e estar inserido no mercado.",
     responsibilities: "Estamos buscando um Desenvolvedor Web com Ruby on Rails na frente de WordPress para se juntar à nossa crescente equipe digital.",
     requirements: "Experiência com Rails, Javascript, JQuery, HTML / CSS ",
-    bonus: ["Transporte", "Alimentação", "Plafom de compras mensal"],
+    bonus: "Transporte, Alimentação, Plafom de compras mensal",
     user_id: "iHyyCBOUEPdRhsBcRPKgJdE3Z603"
 )
 
