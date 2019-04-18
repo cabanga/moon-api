@@ -22,7 +22,6 @@ class Api::V1::VacanciesController < ApplicationController
     
     def create
         @vacancy = Vacancy.new(vacancy_params)
-        #@vacancy.user_id = params[:user_id]
 
         if @vacancy.save
             render json: @vacancy, status: :created

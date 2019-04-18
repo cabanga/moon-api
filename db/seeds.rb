@@ -5,7 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 
-
 vacancy = Vacancy.create(
     title: "Programdor web Ruby On Rails",
     category: "FullStak",
