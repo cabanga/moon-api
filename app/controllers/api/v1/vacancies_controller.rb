@@ -1,5 +1,5 @@
 class Api::V1::VacanciesController < ApplicationController
-    before_action :set_vacancy, only: [:show, :update, :destroy]
+    before_action :set_vacancy, only: [:show, :update, :destroy, :close_vacancy]
     before_action :set_uid, only: [:vacancies_uid]
     # before_action :require_authorization!, only: [:create, :update, :destroy]
     
@@ -17,6 +17,11 @@ class Api::V1::VacanciesController < ApplicationController
     def vacancies_uid
         @myvacancies = Vacancy.where(user_id: @uid)
         render json: @myvacancies
+    end
+
+    def close_vacancy
+        @vacancy.close_vacancy
+        render json: @vacancy
     end
 
     def vacancies_lasts
