@@ -25,7 +25,7 @@ class Api::V1::VacanciesController < ApplicationController
     end
 
     def vacancies_lasts
-        @myvacancies_lasts = Vacancy.last(3)
+        @myvacancies_lasts = Vacancy.vacancies_lasts
         render json: @myvacancies_lasts
     end
 
