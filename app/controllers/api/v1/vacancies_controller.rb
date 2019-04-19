@@ -5,7 +5,7 @@ class Api::V1::VacanciesController < ApplicationController
     
     # GET /api/v1/vacancies
     def index
-        @vacancies = Vacancy.all # current_user.vacancies #
+        @vacancies = Vacancy.all_vacancies# current_user.vacancies #
         render json: @vacancies
     end
     
@@ -63,7 +63,7 @@ class Api::V1::VacanciesController < ApplicationController
  
    # Only allow a trusted parameter "white list" through.
    def vacancy_params
-     params.require(:vacancy).permit(:title, :category, :level, :skills, :companyName, 
+     params.require(:vacancy).permit(:title, :category, :level, :skills, :companyName, :status,
                                      :location, :city, :salary, :description , :bonus, :user_id)
    end
  
