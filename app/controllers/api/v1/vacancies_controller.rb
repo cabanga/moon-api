@@ -64,7 +64,7 @@ class Api::V1::VacanciesController < ApplicationController
    # Only allow a trusted parameter "white list" through.
    def vacancy_params
      params.require(:vacancy).permit(:title, :category, :level, :skills, :companyName, 
-                                     :location, :city, :salary, :descriptions , :bonus, :user_id)
+                                     :location, :city, :salary, :description , :bonus, :user_id)
    end
  
    def require_authorization!
