@@ -14,6 +14,8 @@ class CreateVacancies < ActiveRecord::Migration[5.2]
       t.text :description
       t.string :bonus
       t.string :user_id, null: false
+      t.string :contact_email
+      t.string :contact_phone
 
       t.timestamps
     end

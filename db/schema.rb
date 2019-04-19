@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 2019_02_23_101529) do
     t.text "description"
     t.string "bonus"
     t.string "user_id", null: false
+    t.string "contact_email"
+    t.string "contact_phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
