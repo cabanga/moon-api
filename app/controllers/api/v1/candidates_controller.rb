@@ -46,7 +46,7 @@ class Api::V1::CandidatesController < ApplicationController
  
        # Only allow a trusted parameter "white list" through.
    def candidate_params
-    params.require(:vacancy).permit(:vacancy_id, :user_id)
+    params.require(:candidate).permit(:vacancy_id, :user_id)
   end
 
 end
