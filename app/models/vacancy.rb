@@ -1,6 +1,7 @@
 class Vacancy < ApplicationRecord
   #belongs_to :user
   #belongs_to :user, optional: true
+  has_many :candidates, dependent: :destroy
   
   def self.all_vacancies
     Vacancy.where(status: 1)
