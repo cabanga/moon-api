@@ -12,6 +12,10 @@ class Api::V1::CandidatesController < ApplicationController
         render json: @candidate
     end
 
+    def already_applied
+        render json: Candidate.where(user_id: params[:user_id]).exists?
+    end
+
     # POST /api/v1/candidates
     def create
         @candidate = Candidate.new(candidate_params)

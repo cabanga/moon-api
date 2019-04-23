@@ -1,5 +1,5 @@
 class Api::V1::VacanciesController < ApplicationController
-    before_action :set_vacancy, only: [:show, :update, :destroy, :close_vacancy]
+    before_action :set_vacancy, only: [:show, :update, :destroy, :close_vacancy, :getCandidates]
     before_action :set_uid, only: [:vacancies_uid]
     # before_action :require_authorization!, only: [:create, :update, :destroy]
     
@@ -12,6 +12,11 @@ class Api::V1::VacanciesController < ApplicationController
     # GET /api/v1/vacancies/1
     def show
         render json: @vacancy
+    end
+
+    # GET /api/v1/vacancies/1
+    def getCandidates
+        render json: @vacancy.candidates
     end
 
     def vacancies_uid
