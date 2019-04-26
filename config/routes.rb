@@ -10,8 +10,8 @@ Rails.application.routes.draw do
       get '/vacancies/getCandidates/:id', to: 'vacancies#getCandidates', as: 'getCandidates'
 
       patch '/vacancies/close_vacancy/:id', to: 'vacancies#close_vacancy', as: 'close_vacancy'
-      get '/candidates/already_applied/:user_id', to: 'candidates#already_applied', as: 'already_applied'
-      
+      get '/vacancy/:id/:user_id', to: 'vacancies#already_applied', as: 'already_applied'
+
     end
   end
 
