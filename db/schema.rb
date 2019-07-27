@@ -41,19 +41,14 @@ ActiveRecord::Schema.define(version: 2019_04_20_160842) do
 
   create_table "vacancies", force: :cascade do |t|
     t.string "title"
-    t.integer "category", default: 0
-    t.integer "status", default: 1
-    t.integer "level", default: 0
-    t.text "skills"
     t.string "companyName"
+    t.text "jobType"
     t.string "location"
+    t.text "description"
     t.string "city"
     t.string "salary"
-    t.text "description"
-    t.string "bonus"
     t.string "user_id", null: false
-    t.string "contact_email"
-    t.string "contact_phone"
+    t.integer "status", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -26,6 +26,9 @@ class Api::V1::VacanciesController < ApplicationController
 
     def vacancies_uid
         @myvacancies = Vacancy.where(user_id: @uid)
+
+        puts "*****"*20, @myvacancies, "*****"*20
+
         render json: @myvacancies
     end
 
@@ -78,9 +81,8 @@ class Api::V1::VacanciesController < ApplicationController
 
    # Only allow a trusted parameter "white list" through.
    def vacancy_params
-     params.require(:vacancy).permit(:title, :contact_email, :contact_phone, :category,
-                                     :level, :skills, :companyName, :status, :location,
-                                     :city, :salary, :description , :bonus, :user_id)
+     params.require(:vacancy).permit(:title, :status, :companyName, :jobType, :location, :description, :city, :salary, :user_id)
+    #:title, :contact_email, :contact_phone, :category, :level, :skills, :companyName, :status, :location, :city, :salary, :description , :bonus, :user_id)
    end
 
    def require_authorization!
