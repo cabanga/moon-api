@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :candidates
       resources :vacancies
+      resources :profiles
+      
       get '/vacancies_uid/:uid', to: 'vacancies#vacancies_uid', as: 'vacancies_uid'
       get '/vacancies_lasts', to: 'vacancies#vacancies_lasts', as: 'vacancies_lasts'
       get '/vacancies/getCandidates/:id', to: 'vacancies#getCandidates', as: 'getCandidates'

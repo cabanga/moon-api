@@ -26,9 +26,6 @@ class Api::V1::VacanciesController < ApplicationController
 
     def vacancies_uid
         @myvacancies = Vacancy.where(user_id: @uid)
-
-        puts "*****"*20, @myvacancies, "*****"*20
-
         render json: @myvacancies
     end
 
