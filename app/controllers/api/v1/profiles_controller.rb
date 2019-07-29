@@ -1,5 +1,5 @@
 class Api::V1::ProfilesController < ApplicationController
-  before_action :set_vacancy, only: [:show, :update, :destroy]
+  before_action :set_profile, only: [:show, :update, :destroy]
 
   # GET /api/v1/profiles
   def index
@@ -10,6 +10,10 @@ class Api::V1::ProfilesController < ApplicationController
   # GET /api/v1/profiles/1
   def show
     render json: @profile
+  end
+
+  def perfil_was_complite
+    Profile.was_complite
   end
 
   # POST /api/v1/profiles
@@ -41,7 +45,7 @@ class Api::V1::ProfilesController < ApplicationController
 
     # Use callbacks to share common setup or constraints between actions.
     def set_profile
-      @profile = Profile.find(params[:id])
+      @profile = Profile.find_by(user_id: params[:id])
     end
 
     def set_uid
@@ -50,7 +54,7 @@ class Api::V1::ProfilesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def profile_params
-      params.require(:profile).permit()
+      params.require(:profile).permit(:user_id, :name, :avatar, :email, :cell_phone, :position)
     end
 
 

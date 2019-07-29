@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2019_07_29_064344) do
     t.string "user_id", null: false
     t.string "name"
     t.string "avatar"
+    t.string "position"
     t.string "email", null: false
     t.string "cell_phone", null: false
     t.datetime "created_at", null: false
